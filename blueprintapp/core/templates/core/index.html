@@ -1,9 +1,52 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Home Page</h1>
-<ul>
-    <li><a href="{{ url_for('bp_miembro.index') }}">Miembros</a></li>
-    <li><a href="{{ url_for('bp_tarea.index') }}">Tareas</a></li>
-</ul>
-{% endblock%}
+<div class="text-center mb-5">
+    <h1 class="fw-bold text-dark mb-2">Home Page</h1>
+</div>
+
+<div class="row g-4 justify-content-center">
+
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm text-center p-4 bg-white"
+            style="border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+            onmouseout="this.style.transform='none'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)'">
+            <div class="mb-3">
+                <span
+                    class="p-3 bg-primary bg-opacity-10 text-primary rounded-circle d-inline-flex align-items-center justify-content-center"
+                    style="width: 60px; height: 60px;">
+                    <i class="fa-solid fa-users fa-2x"></i>
+                </span>
+            </div>
+            <h4 class="card-title fw-semibold mb-2">Miembros</h4>
+            <a href="{{ url_for('bp_miembro.index') }}" class="btn btn-primary w-100 fw-medium py-2"
+                style="border-radius: 8px;">
+                Ingresar Módulo <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm text-center p-4 bg-white"
+            style="border-radius: 12px; transition: transform 0.2s ease, box-shadow 0.2s ease;"
+            onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.1)'"
+            onmouseout="this.style.transform='none'; this.style.boxShadow='0 .125rem .25rem rgba(0,0,0,.075)'">
+            <div class="mb-3">
+                <span
+                    class="p-3 bg-success bg-opacity-10 text-success rounded-circle d-inline-flex align-items-center justify-content-center"
+                    style="width: 60px; height: 60px;">
+                    <i class="fa-solid fa-tasks fa-2x"></i>
+                </span>
+            </div>
+            <h4 class="card-title fw-semibold mb-2">Tareas</h4>
+
+            <a href="{{ url_for('bp_tarea.index') }}" class="btn btn-success w-100 text-white fw-medium py-2"
+                style="border-radius: 8px;">
+                Ingresar Módulo <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
